@@ -19,7 +19,7 @@ The goal of this project is to gain hands-on experience with DevOps practices su
 [Rishab Kumar](https://github.com/rishabkumar7)
 
 ## Forker
-[RulOpsSec] (https://github.com/RulOpsSec)
+[RulOpsSec](https://github.com/RulOpsSec)
 
 ## License
 
