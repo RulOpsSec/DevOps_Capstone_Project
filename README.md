@@ -2,7 +2,7 @@
 
 This is a fork of the DevOps Capstone Project.
 
-It generates QR Codes for the provided URL, the front-end is in NextJS and the API is written in Python using FastAPI.
+The app generates QR codes for the provided URL, the front-end is based in NextJS and the backend API is written in Python consuming FastAPI.
 
 ## Application
 
@@ -12,13 +12,14 @@ It generates QR Codes for the provided URL, the front-end is in NextJS and the A
 
 ## Goal
 
-The goal is to get hands-on with DevOps practices like Containerization, CICD and monitoring.
-
-Look at the capstone project for more detials.
+The goal of this project is to gain hands-on experience with DevOps practices such as containerization, building CI/CD pipelines, and implementing observability and monitoring solutions, while demonstrating competence in the field by building a functional project.
 
 ## Author
 
 [Rishab Kumar](https://github.com/rishabkumar7)
+
+## Forker
+[RulOpsSec] (https://github.com/RulOpsSec)
 
 ## License
 
