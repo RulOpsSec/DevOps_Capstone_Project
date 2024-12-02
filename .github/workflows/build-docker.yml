@@ -14,6 +14,6 @@ jobs:
               docker build ./front-end-nextjs/ -t rulopssec/devops-qr-generator-front-end:latest
           - name: push image to DockerHub
             run: |
-              docker login -u rulopssec -p ${{ secrets.DOCKERHUB_TOKEN }}
+              docker login -u rulopssec -p ${{secrets.DOCKERHUB_TOKEN}}
               docker push rulopssec/devops-qr-generator-api:latest
               docker push rulopssec/devops-qr-generator-front-end:latest
