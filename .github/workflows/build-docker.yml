@@ -1,19 +1,33 @@
 name: Build and publish image to DockerHub
+
 on:
-    [workflow_dispatch]
+  workflow_dispatch: # Trigger workflow manually from GitHub UI
 
 jobs:
-    publish_images:
-        runs-on: ubuntu-latest
-        steps:
-          - name: checkout
-            uses: actions/checkout@v4
-          - name: build image
-            run: |
-              docker build ./api/ -t rulopssec/devops-qr-generator-api:latest
-              docker build ./front-end-nextjs/ -t rulopssec/devops-qr-generator-front-end:latest
-          - name: push image to DockerHub
-            run: |
-              docker login -u rulopssec -p ${{secrets.DOCKERHUB_TOKEN}}
-              docker push rulopssec/devops-qr-generator-api:latest
-              docker push rulopssec/devops-qr-generator-front-end:latest
+  publish_images:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Log in to Docker Hub
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u rulopssec --password-stdin
+
+      # Step 3: Build API Image
+      - name: Build API Image
+        run: docker build ./api/ -t rulopssec/devops-qr-generator-api:latest
+
+      # Step 4: Build Front-End Image
+      - name: Build Front-End Image
+        run: docker build ./front-end-nextjs/ -t rulopssec/devops-qr-generator-front-end:latest
+
+      # Step 5: Push API Image
+      - name: Push API Image
+        run: docker push rulopssec/devops-qr-generator-api:latest
+
+      # Step 6: Push Front-End Image
+      - name: Push Front-End Image
+        run: docker push rulopssec/devops-qr-generator-front-end:latest
