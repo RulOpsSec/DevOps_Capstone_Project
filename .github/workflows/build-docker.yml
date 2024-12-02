@@ -10,8 +10,8 @@ jobs:
             uses: actions/checkout@v4
           - name: build image
             run: |
-                docker build ./api/ -t rulopssec/devops-qr-generator-api:latest
-                docker build ./front-end-nextjs/ -t rulopssec devops-qr-generator-front-end:latest
+              docker build ./api/ -t rulopssec/devops-qr-generator-api:latest
+              docker build ./front-end-nextjs/ -t rulopssec/devops-qr-generator-front-end:latest
           - name: push image to DockerHub
             run: |
               docker login -u rulopssec -p ${{ secrets.DOCKERHUB_TOKEN }}
